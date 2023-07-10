@@ -11,11 +11,14 @@ Never miss crucial moments again with dynamic notifications. Stay instantly info
 The Flipz-Alert Script offers a user-friendly interface, allowing you to customize notifications to your preferences. Adjust the appearance, position, and duration of notifications to seamlessly integrate them into your gameplay.
 
 
-## Inhaltsverzeichnis
+## Content
 
 - [Installation](#installation)
-- [Verwendung](#verwendung)
-- [Beispiel](#beispiel)
+- [How to use](#how-to-use)
+- [Examples](#examples)
+
+
+For more content join our **[Discord](https://discord.gg/hgHNRvXmF9)** server to be kept up to date!
 
 ## Installation
 
@@ -25,7 +28,7 @@ The Flipz-Alert Script offers a user-friendly interface, allowing you to customi
 4. Finish!
 
 
-## Verwendung
+## How to use
 
 To trigger the alert, use the exports or TriggerEvent funktions.
 
@@ -41,9 +44,8 @@ Types:
 
 Info! Duration in ms (1000ms = 1s)
 
-## Beispiel
+## Examples
 
-Füge hier einen Beispielcode oder ein Beispiel an, um zu zeigen, wie dein Projekt verwendet werden kann. Dies kann den Lesern helfen, das Konzept besser zu verstehen und es selbst auszuprobieren.
 
 ```
 
@@ -54,3 +56,7 @@ exports['flipz-alert']:Alert("info", "Info Notification Title", "Info Notificati
 TriggerEvent('flipz-alert:Alert', "general", "General", "General Notification Message", 2000)
 
 ```
+
+
+## Thanks for your Support!
+
