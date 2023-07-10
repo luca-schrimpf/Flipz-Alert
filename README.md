@@ -32,7 +32,7 @@ To trigger the notify, use the exports or TriggerEvent funktions.
 `type` and `duration` are optional. For type, general will be used and for duration, 5000 will be used.
 
 ```lua
-Alert("header", "message", 'type', duration --[[number]])
+Notify("header", "message", 'type', duration --[[number]])
 ```
 
 **Types:**
