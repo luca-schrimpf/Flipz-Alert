@@ -27,7 +27,7 @@ For more content join our **[Discord](https://discord.gg/hgHNRvXmF9)** server to
 ## How to use
 To trigger the notify, use the exports or TriggerEvent funktions.
 
-type and duration are optional. For type, general will be used and for duration, 5000 will be used.
+`type` and `duration` are optional. For type, general will be used and for duration, 5000 will be used.
 
 ```lua
 Alert("header", "message", 'type', duration --[[number]])
