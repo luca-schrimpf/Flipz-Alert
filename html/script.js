@@ -43,7 +43,7 @@ $(function () {
                 $(`.wrapper-${number}`).fadeOut( "slow", function () {
                     $(`.wrapper-${number}`).remove()
                 })
-            }, 3000)
+            }, event.data.time)
         }
     })
 })
