@@ -59,4 +59,4 @@ TriggerEvent('flipz-alert:Alert', "general", "General", "General Notification Me
 
 
 ## Thanks for your Support!
-
+This is my first script, and I hope you like that 💖
