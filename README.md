@@ -7,6 +7,8 @@ Never miss crucial moments again with dynamic notifications. Stay instantly info
 
 The Flipz-Alert Script offers a user-friendly interface, allowing you to customize notifications to your preferences. Adjust the appearance, position, and duration of notifications to seamlessly integrate them into your gameplay.
 
+![Screenshot_215](https://github.com/Musiker15/Flipz-Alert/assets/49867381/34805be8-d879-4551-b18b-d8444d8d0785)
+
 ## Content
 - [Flipz-Alert](#flipz-alert)
   - [Content](#content)
