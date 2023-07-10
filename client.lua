@@ -1,31 +1,30 @@
-function Alert(type, title, message, time)
+Notify = function(title, message, type, time)
 	SendNUIMessage({
 		action = 'notify',
-		type = type,
         title = title,
         message = message,
-        time = time
+		type = type or 'general',
+        time = time or 5000
 	})
 end
+exports('Notify', Notify)
 
-RegisterNetEvent('flipz-alert:Alert')
-AddEventHandler('flipz-alert:Alert', function(type, title, message, time)
-	Alert(type, title, message, time)
+RegisterNetEvent('flipz-alert:Notify')
+AddEventHandler('flipz-alert:Notify', function(title, message, type, time)
+	Notify(title, message, type, time)
 end)
 
-RegisterCommand("notify", function() 
-	Alert("general", "General", "General Notification Message", 2000)
-	Alert("info", "Info", "Info Notification Message", 2000)
-	Alert("success", "Success", "Success Notification Message", 2000)
-	Alert("error", "Error", "Error Notification Message", 2000)
-	Alert("warning", "Warning", "Warning Notification Message", 2000)
-end, false )
-
-
-exports['flipz-alert']:Alert("info", "Info Notification Title", "Info Notification Message", 2000)	
-
-
-RegisterCommand("notfiyTest", function()
-	TriggerEvent('flipz-alert:Alert', "general", "General", "General Notification Message", 2000)
-
-end)
+local testCommand = true
+if testCommand then
+	RegisterCommand("notify", function(source, args, raw)
+		Notify("General", "General Notification Message", "general", 5000)
+		Wait(1000)
+		Notify("Info", "Info Notification Message", "info", 5000)
+		Wait(1000)
+		Notify("Success", "Success Notification Message", "success", 5000)
+		Wait(1000)
+		Notify("Warning", "Warning Notification Message", "warning", 5000)
+		Wait(1000)
+		Notify("Error", "Error Notification Message", "error", 5000)
+	end)
+end
