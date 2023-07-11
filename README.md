@@ -36,16 +36,18 @@ Notify("header", "message", 'type', duration --[[number]])
 ```
 
 **Colors**
-- ~s~ = Default
-- ~r~ = Red
-- ~b~ = Blue
-- ~g~ = Green
-- ~y~ = Yellow
-- ~p~ = Purple
-- ~c~ = Grey
-- ~m~ = Dark Grey
-- ~u~ = Black
-- ~o~ = Orange
+```
+~s~ = Default White
+~r~ = Red
+~b~ = Blue
+~g~ = Green
+~y~ = Yellow
+~p~ = Purple
+~c~ = Grey
+~m~ = Dark Grey
+~u~ = Black
+~o~ = Orange
+```
 
 **Types:**
 - general
