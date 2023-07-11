@@ -35,7 +35,7 @@ To trigger the notify, use the exports or TriggerEvent funktions.
 Notify("header", "message", 'type', duration --[[number]])
 ```
 
-**Colors**
+**Colors:**
 ```
 ~s~ = Default White
 ~r~ = Red
