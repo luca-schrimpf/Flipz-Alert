@@ -14,8 +14,8 @@ The Flipz-Alert Script offers a user-friendly interface, allowing you to customi
   - [Content](#content)
   - [Installation](#installation)
   - [How to use](#how-to-use)
-  - [Export](#export)
-  - [Event](#event)
+    - [Export](#export)
+    - [Event](#event)
   - [Thanks for your Support!](#thanks-for-your-support)
 
 For more content join our **[Discord](https://discord.gg/hgHNRvXmF9)** server to be kept up to date!
@@ -35,6 +35,18 @@ To trigger the notify, use the exports or TriggerEvent funktions.
 Notify("header", "message", 'type', duration --[[number]])
 ```
 
+**Colors**
+- ~s~ = Default
+- ~r~ = Red
+- ~b~ = Blue
+- ~g~ = Green
+- ~y~ = Yellow
+- ~p~ = Purple
+- ~c~ = Grey
+- ~m~ = Dark Grey
+- ~u~ = Black
+- ~o~ = Orange
+
 **Types:**
 - general
 - info
@@ -44,18 +56,18 @@ Notify("header", "message", 'type', duration --[[number]])
 
 Info! Duration in ms (1000ms = 1s)
 
-## Export
+### Export
 ```lua
 -- clientside
-exports['flipz-alert']:Notify("General", "General Notification Message", "general", 5000)
+exports['flipz-alert']:Notify("General", "General ~c~Notification~s~ Message", "general", 5000)
 
 -- serverside
-exports['flipz-alert']:Notify(source, "General", "General Notification Message", "general", 5000)
+exports['flipz-alert']:Notify(source, "General", "General ~c~Notification~s~ Message", "general", 5000)
 ```
-## Event
+### Event
 ```lua
 -- serverside
-TriggerClientEvent('flipz-alert:Notify', source, "General", "General Notification Message", "general", 5000)
+TriggerClientEvent('flipz-alert:Notify', source, "General", "General ~c~Notification~s~ Message", "general", 5000)
 ```
 
 ## Thanks for your Support!
