@@ -7,15 +7,15 @@ Never miss crucial moments again with dynamic notifications. Stay instantly info
 
 The Flipz-Alert Script offers a user-friendly interface, allowing you to customize notifications to your preferences. Adjust the appearance, position, and duration of notifications to seamlessly integrate them into your gameplay.
 
-![Screenshot_215](https://github.com/Musiker15/Flipz-Alert/assets/49867381/34805be8-d879-4551-b18b-d8444d8d0785)
+![Screenshot_216](https://github.com/Musiker15/Flipz-Alert/assets/49867381/45f043f4-7c80-4e2f-95e6-71f67a736563)
 
 ## Content
 - [Flipz-Alert](#flipz-alert)
   - [Content](#content)
   - [Installation](#installation)
   - [How to use](#how-to-use)
-  - [Export](#export)
-  - [Event](#event)
+    - [Export](#export)
+    - [Event](#event)
   - [Thanks for your Support!](#thanks-for-your-support)
 
 For more content join our **[Discord](https://discord.gg/hgHNRvXmF9)** server to be kept up to date!
@@ -35,6 +35,20 @@ To trigger the notify, use the exports or TriggerEvent funktions.
 Notify("header", "message", 'type', duration --[[number]])
 ```
 
+**Colors:**
+```
+~s~ = Default White
+~r~ = Red
+~b~ = Blue
+~g~ = Green
+~y~ = Yellow
+~p~ = Purple
+~c~ = Grey
+~m~ = Dark Grey
+~u~ = Black
+~o~ = Orange
+```
+
 **Types:**
 - general
 - info
@@ -44,18 +58,18 @@ Notify("header", "message", 'type', duration --[[number]])
 
 Info! Duration in ms (1000ms = 1s)
 
-## Export
+### Export
 ```lua
 -- clientside
-exports['flipz-alert']:Notify("General", "General Notification Message", "general", 5000)
+exports['flipz-alert']:Notify("General", "General ~c~Notification~s~ Message", "general", 5000)
 
 -- serverside
-exports['flipz-alert']:Notify(source, "General", "General Notification Message", "general", 5000)
+exports['flipz-alert']:Notify(source, "General", "General ~c~Notification~s~ Message", "general", 5000)
 ```
-## Event
+### Event
 ```lua
 -- serverside
-TriggerClientEvent('flipz-alert:Notify', source, "General", "General Notification Message", "general", 5000)
+TriggerClientEvent('flipz-alert:Notify', source, "General", "General ~c~Notification~s~ Message", "general", 5000)
 ```
 
 ## Thanks for your Support!

@@ -3,7 +3,7 @@ games { 'gta5' }
 
 author 'Flipz'
 description 'Flipz-Alert'
-version '1.1'
+version '1.2'
 
 client_script 'client.lua'
 server_script 'server.lua'

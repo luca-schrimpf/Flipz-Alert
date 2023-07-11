@@ -1,10 +1,16 @@
+window.addEventListener('message', (event) => {
+    if (event.data.action == 'notify') {
+        notification(event.data.title, event.data.message, event.data.type, event.data.time);
+    }
+})
+
 const icons = {
     "general" : "fas fa-warehouse",
     "info"    : "fas fa-info-circle",
     "success" : "fas fa-check-circle",
     "error"   : "fas fa-exclamation-circle",
     "warning" : "fas fa-exclamation-triangle"
-};
+}
 
 const colours = {
     "general" : "#FFFFFF",
@@ -12,35 +18,64 @@ const colours = {
     "success" : "#76EE62",
     "error"   : "#FF4A4A",
     "warning" : "#FFCB11"
-};
+}
+
+const colors = {
+    "~r~": "red",
+    "~b~": "#378cbf",
+    "~g~": "green",
+    "~y~": "yellow",
+    "~p~": "purple",
+    "~c~": "grey",
+    "~m~": "#212121",
+    "~u~": "black",
+    "~o~": "orange"
+}
+
+const replaceColors = (str, obj) => {
+    let strToReplace = str;
+
+    for (let id in obj) {
+        strToReplace = strToReplace.replace(new RegExp(id, "g"), obj[id]);
+    }
+
+    return strToReplace
+}
 
 var sound = new Audio('notification.mp3');
 sound.volume = 0.25;
 
-window.addEventListener('message', (event) => {
-    if (event.data.action == 'notify') {
-        var number = Math.floor((Math.random() * 1000) + 1);
+notification = (title, message, type, time) => {
+    for (color in colors) {
+        if (message.includes(color)) {
+            let obj = {};
 
-        $('.notify-wrapper').append(`
-            <div class="notify-div wrapper-${number}" style="border-left: 0.5vh solid ${colours[event.data.type]}; ">
-                <div class="notify-icon-box" style="border: 0.2vh solid ${colours[event.data.type]};">
-                    <i class="${icons[event.data.type]} fa-ms notify-icon" style="color: ${colours[event.data.type]}"></i>
-                </div>
+            obj[color] = `<span style='color: ${colors[color]}'>`;
+            obj['~s~'] = '</span>';
 
-                <div class="notify-text-box">
-                    <p style="color:${colours[event.data.type]}; font-size: 2vh; font-weight: 500; margin-bottom: 0vh; margin-top: 1vh;">${event.data.title}</p>
-                    <p style="margin-top: 0; color: rgba(247, 247, 247, 0.75);">${event.data.message}</p>
-                </div>
-            </div>
-        `)
-
-        $(`.wrapper-${number}`).fadeIn("slow");
-        sound.play();
-
-        setTimeout(() => {
-            $(`.wrapper-${number}`).fadeOut("slow", function () {
-                $(`.wrapper-${number}`).remove()
-            })
-        }, event.data.time)
+            message = replaceColors(message, obj);
+        }
     }
-})
+
+    const notification = $(`
+        <div class="notify-div wrapper" style="border-left: 0.5vh solid ${colours[type]}; ">
+            <div class="notify-icon-box" style="border: 0.2vh solid ${colours[type]};">
+                <i class="${icons[type]} fa-ms notify-icon" style="color: ${colours[type]}"></i>
+            </div>
+
+            <div class="notify-text-box">
+                <p style="color:${colours[type]}; font-size: 2vh; font-weight: 500; margin-bottom: 0vh; margin-top: 1vh;">${title}</p>
+                <p style="margin-top: 0; color: rgba(247, 247, 247, 0.75);">${message}</p>
+            </div>
+        </div>
+    `).appendTo(`.notify-wrapper`);
+
+    notification.fadeIn("slow");
+    sound.play();
+
+    setTimeout(() => {
+        notification.fadeOut("slow");
+    }, time);
+
+    return notification;
+}
